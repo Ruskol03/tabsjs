@@ -8,8 +8,8 @@ let tab = document.querySelectorAll(".tabs"),
 
 
 /* 
-g = hide
-e = show 
+g = "hide"
+e = "show"
 a = tabs
 b wrapper
 c tab content*/
@@ -56,5 +56,5 @@ c tab content*/
 
     }
     nativTabs(tab, wrapper, tabContent, "show", "hide");
-    
+
 });
