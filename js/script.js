@@ -1,4 +1,4 @@
-/* window.addEventListener("DOMContentLoaded", function (){
+ window.addEventListener("DOMContentLoaded", function (){
 
     "use strict";
 
@@ -7,41 +7,54 @@ let tab = document.querySelectorAll(".tabs"),
     tabContent = document.querySelectorAll(".tab-content");
 
 
-    function hideTabContent(a){
-        for(let i = a; i < tabContent.length;i++){
-            tabContent[i].classList.remove("show");
-            tabContent[i].classList.add("hide");
-        }
-    }
-    hideTabContent(1);
+/* 
+g = hide
+e = show 
+a = tabs
+b wrapper
+c tab content*/
 
-    function showTabContent(b){
-            if(tabContent[b].classList.contains("hide")){
-                tabContent[b].classList.remove("hide");
-                tabContent[b].classList.add("show");
 
+    function nativTabs (a,b,c,e,g){
+        
+        function hideTabContent(a){
+            for(let i = a; i < c.length;i++){
+                c[i].classList.remove(e);
+                c[i].classList.add(g);
             }
-    }
+        }
+        hideTabContent(1);
 
-    wrapper.addEventListener("click", function (event){
-        let target = event.target;
-
-        if(target && target.classList.contains("tabs")){
-            for(let i = 0;i<tab.length;i++){
-                if(target==tab[i]){
-                    hideTabContent(0);
-                    showTabContent(i);
-                    break;
+        function showTabContent(b){
+                if(c[b].classList.contains(g)){
+                    c[b].classList.remove(g);
+                    c[b].classList.add(e);
 
                 }
-            }
         }
-    });
+
+        b.addEventListener("click", function (event){
+            let target = event.target;
+
+            if(target && target.classList.contains("tabs")){
+                for(let i = 0;i<a.length;i++){
+                    if(target==a[i]){
+                        hideTabContent(0);
+                        showTabContent(i);
+                        break;
+
+                    }
+                }
+            }
+        });
 
 
 
 
+    
 
 
-}); */
-
+    }
+    nativTabs(tab, wrapper, tabContent, "show", "hide");
+    
+});
